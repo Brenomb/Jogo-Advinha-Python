@@ -41,4 +41,24 @@ match dificuldadeJogo:
                     print(f"Parabéns! Você acertou com {cTentativas + 1} tentativas ")
             
             case 2: # Modo de jogo Fácil onde o player da instruções à maquina e ela quem tem que advinhar o número
-                numeroPC = randint(0,100)
+                inicio = 0
+                fim = 100
+                numeroPC = randint(inicio,fim)
+                cTentativas = 0
+                input("Vamos lá! Pense em um número e quando quiser começar pressione qualquer tecla")
+                
+                while True:
+                    print(f"O número que você pensou é {numeroPC}? ")
+                    chute = input("Para responder diga S ou N ").upper
+                    if chute == "S":
+                        print(f"UHUUUUUL! Consegui na {cTentativas} ")
+                        break
+                    elif chute == "N":
+                        print("O número é maior ou menor? ")
+                        pergunta = input("Para responder escreva 'maior' ou 'menor' ").lower
+                        if pergunta == "maior":
+                            inicio = numeroPC
+                        elif pergunta == "menor":
+                            fim = numeroPC
+                                
+                    numeroPC == randint(inicio,fim)
